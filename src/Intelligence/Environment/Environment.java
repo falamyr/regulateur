@@ -10,6 +10,9 @@ public class Environment {
 	// DONNEES	
 	protected int stack = -1;
 	
+	protected int bigBlindAmount = -1;
+	protected int numberPlayers = -1;
+	
 	protected int classe = environmentClasses.UNDEFINED_CLASS;
 	
 	// CONSTRUCTEUR
@@ -89,9 +92,11 @@ public class Environment {
 		this.classe = environmentClasses.LOW_CLASS;
 	}
 	
-	public void update(int stack)
+	public void update(int stack, int bigBlindAmount, int numberPlayers)
 	{
 		this.stack = stack;
+		this.bigBlindAmount = bigBlindAmount;
+		this.numberPlayers = numberPlayers;
 		classify();
 	}
 	
@@ -106,6 +111,8 @@ public class Environment {
 	{
 		Environment clone = new Environment();
 		clone.stack = this.stack;
+		clone.bigBlindAmount = this.bigBlindAmount;
+		clone.numberPlayers = this.numberPlayers;
 		clone.classe = this.classe;
 		return clone;
 	}
