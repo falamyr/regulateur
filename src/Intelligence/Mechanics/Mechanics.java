@@ -90,19 +90,19 @@ public class Mechanics {
 		{
 			if (bet == betMax)
 			{
-				this.numberDecisionsAvailable = 3;
+				this.numberDecisionsAvailable = 2;
 				this.classe =  mechanicsClasses.EQUALS_BET_CLASS;
 			}
 			else
 			{
 				if (bet + stack <= betMax)
 				{
-					this.numberDecisionsAvailable = 2;
+					this.numberDecisionsAvailable = 1;
 					this.classe =  mechanicsClasses.UNDER_BET_CLASS;
 				}
 				else
 				{
-					this.numberDecisionsAvailable = 3;
+					this.numberDecisionsAvailable = 2;
 					this.classe =  mechanicsClasses.OVER_BET_CLASS;
 				}
 			}

@@ -37,20 +37,14 @@ public abstract class Decision {
 		case mechanicsClasses.UNDER_BET_CLASS:
 			if (indice == 0)
 				return decisionClasses.CALL_CLASS;
-			else
-				return decisionClasses.FOLD_CLASS;
 		case mechanicsClasses.EQUALS_BET_CLASS:
 			if (indice == 0)
 				return decisionClasses.CHECK_CLASS;
-			else if (indice == 1)
-				return decisionClasses.FOLD_CLASS;
 			else
 				return decisionClasses.RAISE_CLASS;
 		case mechanicsClasses.OVER_BET_CLASS:
 			if (indice == 0)
 				return decisionClasses.CALL_CLASS;
-			else if (indice == 1)
-				return decisionClasses.FOLD_CLASS;
 			else
 				return decisionClasses.RAISE_CLASS;
 		default:
