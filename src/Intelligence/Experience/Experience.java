@@ -89,9 +89,9 @@ public class Experience {
 	
 	// METHODES
 	
-	public void evaluateSuccess(Environment result, Environment goal)
+	public void evaluateSuccess(Environment result)
 	{
-		this.successClass = Success.classify(goal, env, result);
+		this.successClass = Success.classify(env, result);
 	}
 	
 	// TOSTRING
