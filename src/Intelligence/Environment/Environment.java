@@ -36,11 +36,6 @@ public class Environment {
 		return this.classe;
 	}
 	
-	public void setStack(int stack)
-	{
-		this.stack = stack;		
-	}
-	
 	public int getStack()
 	{
 		return this.stack;

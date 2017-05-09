@@ -11,8 +11,6 @@ public abstract class Success {
 		if (Main.constants.showRegulateur)
 			System.out.println("Calcul du succès.");
 		
-		int distanceOld = Environment.distance(goal, Eold);
-		int distanceNew = Environment.distance(goal, Enew);
 
 		int success = distanceOld - distanceNew;
 		
