@@ -16,6 +16,8 @@ public class InformationRegulateur {
 	
 	protected int bigBlindAmount = -1;
 	
+	protected int numberPlayers = -1;
+	
 	// CONSTRUCTEUR	
 	public InformationRegulateur(int situation, 
 			boolean isOut,
@@ -24,7 +26,8 @@ public class InformationRegulateur {
 			int stack,
 			int bet,
 			int betMax,
-			int bigBlindAmount)
+			int bigBlindAmount,
+			int numberPlayers)
 	{
 		this.situation = situation;
 		this.playerOut = isOut;
@@ -34,5 +37,6 @@ public class InformationRegulateur {
 		this.bet = bet;
 		this.betMax = betMax;
 		this.bigBlindAmount = bigBlindAmount;
+		this.numberPlayers = numberPlayers;
 	}
 }

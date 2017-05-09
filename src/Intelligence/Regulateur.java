@@ -103,7 +103,7 @@ public class Regulateur {
 		synchronized (this) {
 
 			this.meteo.update(info.handValues, info.handColors);
-			this.env.update(info.stack, info.);
+			this.env.update(info.stack, info.bigBlindAmount, info.numberPlayers);
 			this.mechs.update(info.stack, info.bet, info.betMax);
 			this.time.update(info.situation);
 			this.events.update(info.situation);
