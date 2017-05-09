@@ -158,7 +158,7 @@ public class Regulateur {
 			// C'EST A DIRE QU'ON CALCULE LES SUCCESS
 			if (learn && this.situation != info.situation
 					&& info.situation == Game.constants.SITUATION_TURN_OVER) {
-				env.update(info.stack);
+				env.update(info.stack, info.bigBlindAmount, info.numberPlayers);
 				updateExperiences();
 				events.clear();
 			}
