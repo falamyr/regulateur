@@ -12,45 +12,13 @@ public abstract class Success {
 			System.out.println("Calcul du succès.");
 		
 
-		int success = distanceOld - distanceNew;
 		
-		if (Main.constants.showRegulateur)
-			System.out.println("Distance goal, Eold = " + distanceOld + "\n"
-					+ " distance goal, Enew = " + distanceNew + "\n"
-					+ " success = " + success + ".");
-		
-		if (success == 0)
-		{
-			if (Main.constants.showRegulateur)
-				System.out.println("SUCCES = NEUTRE.");
-			return successClasses.NEUTRAL_CLASS;
-		}
-		else {
-			if (success < -constants.SUCCESS_TRESHOLD)
-			{
-				if (Main.constants.showRegulateur)
-					System.out.println("SUCCES = TRES MAUVAIS.");			
-				return successClasses.VERY_BAD_CLASS;
-			}
-			else if (success < 0)
-			{
-				if (Main.constants.showRegulateur)
-					System.out.println("SUCCESS = MAUVAIS.");
-				return successClasses.BAD_CLASS;
-			}
-			else if (success > constants.SUCCESS_TRESHOLD)
-			{
-				if (Main.constants.showRegulateur)
-					System.out.println("SUCCES = TRES BON.");
-				return successClasses.VERY_GOOD_CLASS;
-			}
-			else
-			{
-				if (Main.constants.showRegulateur)
-					System.out.println("SUCCES = BON.");				
-				return successClasses.GOOD_CLASS;
-			}
-		}
+		int stackOld = Eold.getStack();
+		int stackNew = Enew.getStack();
+		int bigBlindAmountOld = Eold.getBigBlindAmount();
+		int bigBlindAmountNew = Enew.getBigBlindAmount();
+		int numberPlayersOld = Eold.getNumberPlayers(););
+		int numberPlayersNew = Enew.getNumberPlayers();
 		
 	}
 
