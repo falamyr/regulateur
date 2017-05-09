@@ -41,6 +41,21 @@ public class Environment {
 		this.stack = stack;		
 	}
 	
+	public int getStack()
+	{
+		return this.stack;
+	}
+	
+	public int getBigBlindAmount()
+	{
+		return this.bigBlindAmount;
+	}
+	
+	public int getNumberPlayers()
+	{
+		return this.numberPlayers;
+	}
+	
 	public static int getIndiceFromClass(int environmentClass)
 	{
 		switch(environmentClass)
@@ -100,10 +115,6 @@ public class Environment {
 		classify();
 	}
 	
-	public static int distance(Environment E1, Environment E2)
-	{
-		return Math.abs(E1.stack - E2.stack);
-	}
 	
 	// CLONE
 	
