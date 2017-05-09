@@ -157,7 +157,7 @@ public class Table {
 			int betMax = this.betMax;
 
 			return new InformationRegulateur(situation, isOut, handValues,
-					handColors, stack, bet, betMax, bigBlindAmount, );
+					handColors, stack, bet, betMax, bigBlindAmount, chairs.getNumberPlayersInGame());
 		}
 	}
 
