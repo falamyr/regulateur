@@ -20,9 +20,18 @@ public interface constants {
 	public static final int SIZE_EXPERIENCES_STACK_INITIAL = 25;	
 	
 	// WEIGHTS
-	public static final double INITIAL_WEIGHT = 0.5;
-	public static final double WEIGHTS_LIMIT_UP = 0.99;
-	public static final double WEIGHTS_LIMIT_DOWN = 0.01;
+	public static final int WEIGHTS_FOLD_LIMIT = 10;
+	public static final int INITIAL_WEIGHT = 50;
+	public static final int WEIGHTS_LIMIT_UP = 100;
+	public static final int WEIGHTS_LIMIT_DOWN = 0;
+	public static final int WEIGHTS_OPPONENT_OUT_GAIN = 10;
+	public static final int WEIGHTS_SELF_OUT_LOSS = -10;
+	public static final int WEIGHTS_BIG_WIN_GAIN = 2;
+	public static final int WEIGHTS_SMALL_WIN_GAIN = 1;
+	public static final int WEIGHTS_BIG_LOSS_LOSS = -2;
+	public static final int WEIGHTS_SMALL_LOSS_LOSS = -2;
+	
+
 	
 	// DECISIONS
 	public static final int NUMBER_DECISIONS_MAX = 3;
