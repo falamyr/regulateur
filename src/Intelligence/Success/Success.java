@@ -56,19 +56,23 @@ public abstract class Success {
 		
 	}
 
-	public static double updateWeight(double weight, int successClass) {
+	public static int updateWeight(int weight, int successClass) {
 		try {
 			switch (successClass) {
-			case successClasses.NEUTRAL_CLASS:
+			case successClasses.OPPONENT_OUT_CLASS:
+				return Math.min(Intelligence.constants.WEIGHTS_LIMIT_UP, weight + 10);
+			case successClasses.SELF_OUT_CLASS:
+				return Math.max(Intelligence.constants.WEIGHTS_LIMIT_DOWN, weight - 10);
+			case successClasses.BIG_WIN_CLASS:
+				return Math.min(Intelligence.constants.WEIGHTS_LIMIT_UP, weight + 2);
+			case successClasses.SMALL_WIN_CLASS:
+				return Math.min(Intelligence.constants.WEIGHTS_LIMIT_UP, weight + 1);
+			case successClasses.BIG_LOSS_CLASS:
+				return Math.max(Intelligence.constants.WEIGHTS_LIMIT_DOWN, weight - 2);
+			case successClasses.SMALL_LOSS_CLASS:
+				return Math.max(Intelligence.constants.WEIGHTS_LIMIT_DOWN, weight - 1);
+			case successClasses.ZERO_WIN_CLASS:
 				return weight;
-			case successClasses.BAD_CLASS:
-				return 3 * weight / 4;
-			case successClasses.VERY_BAD_CLASS:
-				return weight / 2;
-			case successClasses.GOOD_CLASS:
-				return (1 + weight) / 4;
-			case successClasses.VERY_GOOD_CLASS:
-				return (1 + weight) / 2;
 			default:
 				throw new Exception("La classe du succès est inconnue.");
 			}
@@ -82,16 +86,20 @@ public abstract class Success {
 	public static String toString(int classSuccess)
 	{
 		switch (classSuccess) {
-		case successClasses.NEUTRAL_CLASS:
-			return "SUCCESS_NEUTRAL";
-		case successClasses.BAD_CLASS:
-			return "SUCCESS_BAD";
-		case successClasses.VERY_BAD_CLASS:
-			return "SUCCESS_VERY_BAD";
-		case successClasses.GOOD_CLASS:
-			return "SUCCESS_GOOD";
-		case successClasses.VERY_GOOD_CLASS:
-			return "SUCCESS_VERY_GOOD";
+		case successClasses.OPPONENT_OUT_CLASS:
+			return "SUCCESS_OPPONENT_OUT";
+		case successClasses.SELF_OUT_CLASS:
+			return "SUCCESS_SELF_OUT";			
+		case successClasses.BIG_WIN_CLASS:
+			return "SUCCESS_BIG_WIN";			
+		case successClasses.SMALL_WIN_CLASS:
+			return "SUCCESS_SMALL_WIN";			
+		case successClasses.BIG_LOSS_CLASS:
+			return "SUCCESS_BIG_LOSS";			
+		case successClasses.SMALL_LOSS_CLASS:
+			return "SUCCESS_SMALL_LOSS";			
+		case successClasses.ZERO_WIN_CLASS:
+			return "SUCCESS_ZERO_WIN";			
 		default:
 			return "SUCCESS_UNDEFINED";
 		}
