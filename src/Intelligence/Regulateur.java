@@ -26,7 +26,6 @@ public class Regulateur {
 	protected EventSequence events = null;
 	protected Weights weights = null;
 
-	protected Environment goal = null;
 
 	protected int turn = -1;
 	protected int situation = Game.constants.SITUATION_UNDEFINED;
@@ -59,8 +58,6 @@ public class Regulateur {
 		events = new EventSequence(meteo, env, mechs);
 		weights = new Weights();
 
-		goal = new Environment();
-		goal.setStack(Game.constants.TOTAL_NUMBER_CHIPS);
 
 		this.learn = learn;
 		if (learn)
@@ -174,7 +171,7 @@ public class Regulateur {
 
 		synchronized (this) {
 			for (int i = numberExperiencesStart; i < numberExperiencesEnd; i++)
-				stackExperiences[i].evaluateSuccess(env, goal);
+				stackExperiences[i].evaluateSuccess(env);
 			numberExperiencesStart = numberExperiencesEnd;
 
 		}

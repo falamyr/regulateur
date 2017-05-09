@@ -5,7 +5,7 @@ import Intelligence.Environment.Environment;
 
 public abstract class Success {
 
-	public static int classify(Environment goal, Environment Eold,
+	public static int classify(Environment Eold,
 			Environment Enew) {
 		
 		if (Main.constants.showRegulateur)
