@@ -95,7 +95,7 @@ public class Weights {
 					.getIndiceFromClass(timeClass)][EventSequence
 					.getIndiceFromClass(eventsClass)];
 
-			double oldWeight = decisionWeights[indiceDecision];
+			int oldWeight = decisionWeights[indiceDecision];
 
 			int updatedWeight = Success
 					.updateWeight(oldWeight, successClass);

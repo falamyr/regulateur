@@ -11,7 +11,7 @@ public abstract class Decision {
 
 	// PRIVATE
 
-	private static int findMax(double[] weights, int mechanicsClass) {
+	private static int findMax(int[] weights, int mechanicsClass) {
 		int numberWeights = getNumberClasses(mechanicsClass);
 
 		double[] tmp = new double[numberWeights];
@@ -56,7 +56,7 @@ public abstract class Decision {
 
 	public static int decide(int meteoClass, int envClass, int mechsClass,
 			int timeClass, int eventsClass, Weights weights) {
-		double[] decisionWeights = weights.getDecisionWeights(meteoClass,
+		int[] decisionWeights = weights.getDecisionWeights(meteoClass,
 				envClass, mechsClass, timeClass, eventsClass);
 
 		int indiceMax = findMax(decisionWeights, mechsClass);
