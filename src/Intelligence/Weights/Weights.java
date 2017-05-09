@@ -26,13 +26,13 @@ public class Weights {
 
 	protected int numberFlattenedWeights = 0;
 
-	protected double[][][][][][] weights = null;
+	protected int [][][][][][] weights = null;
 
 	// CONSTRUCTEUR
 
 	public Weights() {
 
-		this.weights = new double[numberMeteoClasses][numberEnvironmentClasses][numberMechanicsClasses][numberTimeClasses][numberEventsClasses][];
+		this.weights = new int[numberMeteoClasses][numberEnvironmentClasses][numberMechanicsClasses][numberTimeClasses][numberEventsClasses][];
 
 		for (int i = 0; i < numberMeteoClasses; i++) {
 			for (int j = 0; j < numberEnvironmentClasses; j++) {
@@ -43,9 +43,9 @@ public class Weights {
 									.getNumberClasses(Mechanics
 											.getClassFromIndice(k));
 							numberFlattenedWeights += numberWeights;
-							this.weights[i][j][k][l][m] = new double[numberWeights];
+							this.weights[i][j][k][l][m] = new int[numberWeights];
 							for (int n = 0; n < numberWeights; n++) {
-								this.weights[i][j][k][l][m][n] = Math.random();
+								this.weights[i][j][k][l][m][n] = Intelligence.constants.INITIAL_WEIGHT;
 								if (weights[i][j][k][l][m][n] < Intelligence.constants.WEIGHTS_LIMIT_DOWN)
 									weights[i][j][k][l][m][n] = Intelligence.constants.WEIGHTS_LIMIT_DOWN;
 								if (weights[i][j][k][l][m][n] > Intelligence.constants.WEIGHTS_LIMIT_UP)
@@ -61,7 +61,7 @@ public class Weights {
 
 	// ACCESSEUR
 
-	public double[] getDecisionWeights(int meteoClass, int envClass,
+	public int[] getDecisionWeights(int meteoClass, int envClass,
 			int mechsClass, int timeClass, int eventsClass) {
 		return this.weights[Meteo.getIndiceFromClass(meteoClass)][Environment
 				.getIndiceFromClass(envClass)][Mechanics
@@ -88,7 +88,7 @@ public class Weights {
 					mechsClass);
 
 			System.out.println(Meteo.getIndiceFromClass(meteoClass));
-			double[] decisionWeights = this.weights[Meteo
+			int[] decisionWeights = this.weights[Meteo
 					.getIndiceFromClass(meteoClass)][Environment
 					.getIndiceFromClass(envClass)][Mechanics
 					.getIndiceFromClass(mechsClass)][Time
@@ -97,7 +97,7 @@ public class Weights {
 
 			double oldWeight = decisionWeights[indiceDecision];
 
-			double updatedWeight = Success
+			int updatedWeight = Success
 					.updateWeight(oldWeight, successClass);
 			// if (Main.constants.showRegulateur)
 			// System.out.println("Success = " + successClass +
@@ -115,7 +115,7 @@ public class Weights {
 		return this.numberFlattenedWeights;
 	}
 
-	public double[][][][][][] getWeights_io() {
+	public int[][][][][][] getWeights_io() {
 		return weights;
 	}
 
@@ -142,7 +142,7 @@ public class Weights {
 		return flattenedWeights;
 	}
 
-	public void setWeights_io(double[] flattenedWeights) {
+	public void setWeights_io(int[] flattenedWeights) {
 
 		int done = 0;
 		for (int i = 0; i < numberMeteoClasses; i++) {

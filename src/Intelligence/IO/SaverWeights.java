@@ -79,7 +79,7 @@ public class SaverWeights {
 
 			Writer writer = new BufferedWriter(new OutputStreamWriter(stream));
 
-			double[][][][][][] weightsArr = weights.getWeights_io();
+			int[][][][][][] weightsArr = weights.getWeights_io();
 
 			for (int i = 0; i < meteoClasses.NUMBER_CLASSES; i++) {
 				for (int j = 0; j < environmentClasses.NUMBER_CLASSES; j++) {
@@ -117,7 +117,7 @@ public class SaverWeights {
 											+ Decision.toString(decisionClass,
 													mechsClass)
 											+ ", "
-											+ Double.toString(weightsArr[i][j][k][l][m][n]);
+											+ Integer.toString(weightsArr[i][j][k][l][m][n]);
 									writer.write(out + "\n");
 								}
 							}

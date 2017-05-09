@@ -33,16 +33,16 @@ public class LoaderWeights {
 		
 	public void loadWeights()
 	{	
-		double []flattenedWeights = null;
+		int []flattenedWeights = null;
 		try 
 		{
 			BufferedReader reader = new BufferedReader(new FileReader(filePath));
 			 
 		    int numberFlattenedWeights = weights.getNumberFlattenedWeights_io();		    
-		    flattenedWeights = new double[numberFlattenedWeights];
+		    flattenedWeights = new int[numberFlattenedWeights];
 		    
 		    for (int i = 0 ; i < numberFlattenedWeights ; i++)
-		    	flattenedWeights[i] = Double.parseDouble(reader.readLine());     
+		    	flattenedWeights[i] = Integer.parseInt(reader.readLine());     
 				         
 			 reader.close();   	
 		} 
