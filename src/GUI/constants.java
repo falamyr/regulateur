@@ -4,6 +4,9 @@ public interface constants {
 	
 	// MEASURES
 	
+	public static final int LARGE_FRAME_INDICE = 0;
+	public static final int SMALL_FRAME_INDICE = 1;
+	
 	public static final int WIDTH_CARD = 60;
 	public static final int HEIGHT_CARD = 88;
 	
