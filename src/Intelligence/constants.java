@@ -15,12 +15,12 @@ public interface constants {
 	
 	// SUCCESS
 	public static final int SUCCESS_TRESHOLD = 200;
+	public static final int SUCCESS_FOLD_LIMIT = 10;
 	
 	// EXPERIENCES
 	public static final int SIZE_EXPERIENCES_STACK_INITIAL = 25;	
 	
 	// WEIGHTS
-	public static final int WEIGHTS_FOLD_LIMIT = 10;
 	public static final int INITIAL_WEIGHT = 50;
 	public static final int WEIGHTS_LIMIT_UP = 100;
 	public static final int WEIGHTS_LIMIT_DOWN = 0;

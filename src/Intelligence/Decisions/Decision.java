@@ -11,7 +11,7 @@ public abstract class Decision {
 
 	// PRIVATE
 
-	private static int findMax(int[] weights, int mechanicsClass) {
+	private static int findMax(boolean learning, int[] weights, int mechanicsClass) {
 		int numberWeights = getNumberClasses(mechanicsClass);
 
 		int[] tmp = new int[numberWeights];
@@ -28,7 +28,15 @@ public abstract class Decision {
 					i = j;
 			}
 		}
-		return i;
+		if (learning)
+			return i;
+		else
+		{
+			if (weights[i] < Intelligence.constants.SUCCESS_FOLD_LIMIT)
+				return 2;
+			else
+				return i;
+		}
 
 	}
 
@@ -54,18 +62,23 @@ public abstract class Decision {
 
 	// METHODES
 
-	public static int decide(int meteoClass, int envClass, int mechsClass,
+	// NOTE : the learning algorithms never folds
+	public static int decide(boolean learning, int meteoClass, int envClass, int mechsClass,
 			int timeClass, int eventsClass, Weights weights) {
 		int[] decisionWeights = weights.getDecisionWeights(meteoClass,
 				envClass, mechsClass, timeClass, eventsClass);
 
-		int indiceMax = findMax(decisionWeights, mechsClass);
+		int indiceMax = findMax(learning, decisionWeights, mechsClass);
 
 		return getDecision(indiceMax, mechsClass);
 
 	}
 
 	public static int getIndiceFromClass(int decisionClass, int mechanicsClass) {
+		
+		if (decisionClass == 2)
+			return decisionClasses.FOLD_CLASS;
+		
 		switch (mechanicsClass) {
 		case mechanicsClasses.UNDER_BET_CLASS:
 			switch (decisionClass) {
