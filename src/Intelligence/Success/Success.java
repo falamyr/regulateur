@@ -17,8 +17,42 @@ public abstract class Success {
 		int stackNew = Enew.getStack();
 		int bigBlindAmountOld = Eold.getBigBlindAmount();
 		int bigBlindAmountNew = Enew.getBigBlindAmount();
-		int numberPlayersOld = Eold.getNumberPlayers(););
+		int numberPlayersOld = Eold.getNumberPlayers();
 		int numberPlayersNew = Enew.getNumberPlayers();
+		
+		int chipsAmountTreshold = 3*bigBlindAmountOld/2;
+		
+		if (stackNew == 0)
+			return successClasses.SELF_OUT_CLASS;
+		else if (numberPlayersNew < numberPlayersOld)
+			return successClasses.OPPONENT_OUT_CLASS;
+		else if (stackNew == stackOld)
+			return successClasses.ZERO_WIN_CLASS;
+		else
+		{
+			if (stackNew - stackOld > 0)
+				{
+					if(stackNew - stackOld > chipsAmountTreshold)
+						return successClasses.BIG_WIN_CLASS;
+					else if (stackNew - stackOld <= chipsAmountTreshold)
+						return successClasses.SMALL_WIN_CLASS;
+				}
+			else if (stackNew - stackOld < 0)
+			{
+				if(stackNew - stackOld < -chipsAmountTreshold)
+					return successClasses.BIG_LOSS_CLASS;
+				else if (stackNew - stackOld >= -chipsAmountTreshold)
+					return successClasses.SMALL_LOSS_CLASS;
+			}
+		}
+		try {
+			throw new Exception("Success class could not be processed.");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return -1;
 		
 	}
 
