@@ -69,16 +69,16 @@ public class PlayerPanel extends JPanel {
 		nameLabel.setVerticalAlignment(JLabel.CENTER);
 		nameLabel.setMinimumSize(new Dimension(constants.WIDTH_LABEL_MIN[size],
 				constants.HEIGHT_LABEL_MIN[size]));
-		nameLabel.setPreferredSize(new Dimension(80, 25));
-		nameLabel.setMaximumSize(new Dimension(100, 25));
+		nameLabel.setPreferredSize(new Dimension(constants.WIDTH_LABEL_PREFERRED[size], constants.HEIGHT_LABEL_PREFERRED[size]));
+		nameLabel.setMaximumSize(new Dimension(constants.WIDTH_LABEL_MAX[size], constants.HEIGHT_LABEL_MAX[size]));
 
 		stackLabel = new JLabel(" ");
 		stackLabel.setHorizontalAlignment(JLabel.CENTER);
 		stackLabel.setVerticalAlignment(JLabel.CENTER);
 		stackLabel.setMinimumSize(new Dimension(constants.WIDTH_LABEL_MIN[size],
 				constants.HEIGHT_LABEL_MIN[size]));
-		stackLabel.setPreferredSize(new Dimension(80, 25));
-		stackLabel.setMaximumSize(new Dimension(100, 25));
+		stackLabel.setPreferredSize(new Dimension(constants.WIDTH_LABEL_PREFERRED[size], constants.HEIGHT_LABEL_PREFERRED[size]));
+		stackLabel.setMaximumSize(new Dimension(constants.WIDTH_LABEL_MAX[size], constants.HEIGHT_LABEL_MAX[size]));
 
 		decisionLabel = new JLabel(" ");
 		decisionLabel.setHorizontalAlignment(JLabel.CENTER);
@@ -86,8 +86,8 @@ public class PlayerPanel extends JPanel {
 		decisionLabel.setMinimumSize(new Dimension(
 				constants.WIDTH_LABELDECISION_MIN[size],
 				constants.HEIGHT_LABELDECISION_MIN[size]));
-		decisionLabel.setPreferredSize(new Dimension(80, 30));
-		decisionLabel.setMaximumSize(new Dimension(100, 30));
+		decisionLabel.setPreferredSize(new Dimension(constants.WIDTH_LABELDECISION_PREFERRED[size], constants.HEIGHT_LABELDECISION_PREFERRED[size]));
+		decisionLabel.setMaximumSize(new Dimension(constants.WIDTH_LABELDECISION_MAX[size], constants.HEIGHT_LABELDECISION_MAX[size]));
 
 		cardsVoid = new JLabel[2];
 		cardsVoid[0] = new JLabel(new ImageIcon(

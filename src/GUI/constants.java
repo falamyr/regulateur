@@ -8,16 +8,21 @@ public interface constants {
 	public static final int SMALL_GUI_INDICE = 1;
 
 	public static final int[] WIDTH_CARD = { 60, 40 };
-
 	public static final int[] HEIGHT_CARD = { 88, 59 };
 
-	public static final int[] WIDTH_LABEL_MIN = { 60, 40, };
-
+	public static final int[] WIDTH_LABEL_MIN = { 60, 40 };
 	public static final int[] HEIGHT_LABEL_MIN = { 20, 15 };
+	public static final int[] WIDTH_LABEL_PREFERRED = { 80, 60 };
+	public static final int[] HEIGHT_LABEL_PREFERRED = { 25, 20 };
+	public static final int[] WIDTH_LABEL_MAX = { 100, 80 };
+	public static final int[] HEIGHT_LABEL_MAX = { 25, 20 };
 
 	public static final int[] WIDTH_LABELDECISION_MIN = { 60, 40 };
-
 	public static final int[] HEIGHT_LABELDECISION_MIN = { 20, 15 };
+	public static final int[] WIDTH_LABELDECISION_PREFERRED = { 80, 60 };
+	public static final int[] HEIGHT_LABELDECISION_PREFERRED = { 30, 25 };
+	public static final int[] WIDTH_LABELDECISION_MAX = { 100, 75 };
+	public static final int[] HEIGHT_LABELDECISION_MAX = { 30, 25 };
 
 	public static final int[] h1Player = { 10, 6 };
 	public static final int[] h2Player = { 0, 0 };
@@ -97,6 +102,6 @@ public interface constants {
 	public static final int PIERRE = 5;
 
 	// PRINT
-	public static final boolean printSizes = false;
+	public static final boolean printSizes = true;
 
 }
