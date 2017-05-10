@@ -119,9 +119,9 @@ public class Weights {
 		return weights;
 	}
 
-	public double[] getFlattenedWeights_io() {
+	public int[] getFlattenedWeights_io() {
 
-		double[] flattenedWeights = new double[numberFlattenedWeights];
+		int[] flattenedWeights = new int[numberFlattenedWeights];
 
 		int done = 0;
 		for (int i = 0; i < numberMeteoClasses; i++) {
