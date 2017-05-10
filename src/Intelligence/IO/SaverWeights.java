@@ -56,10 +56,10 @@ public class SaverWeights {
 			Writer writer = new BufferedWriter(new OutputStreamWriter(stream));
 
 			int numberFlattenedWeights = weights.getNumberFlattenedWeights_io();
-			double[] flattenedWeights = weights.getFlattenedWeights_io();
+			int[] flattenedWeights = weights.getFlattenedWeights_io();
 
 			for (int i = 0; i < numberFlattenedWeights; i++)
-				writer.write(Double.toString(flattenedWeights[i]) + "\n");
+				writer.write(Integer.toString(flattenedWeights[i]) + "\n");
 
 			writer.close();
 

@@ -34,9 +34,9 @@ public class Run {
 		players[5] = new Player("Pierre", false);
 
 		
-		boolean learn = false;
-		boolean save = false;
-		boolean load = false;
+		boolean learn = true;
+		boolean save = true;
+		boolean load = true;
 		Regulateur []regulateurs = new Regulateur[6];
 		for (int i = 0 ; i < 6 ; i++)
 		{
