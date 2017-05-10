@@ -151,8 +151,6 @@ public abstract class Decision {
 			switch (decisionClass) {
 			case decisionClasses.CALL_CLASS:
 				return "DECISION_CALL";
-			case decisionClasses.FOLD_CLASS:
-				return "DECISION_FOLD";
 			default:
 				return "DECISION_UNDEFINED";
 			}
@@ -160,8 +158,6 @@ public abstract class Decision {
 			switch (decisionClass) {
 			case decisionClasses.CHECK_CLASS:
 				return "DECISION_CHECK";
-			case decisionClasses.FOLD_CLASS:
-				return "DECISION_FOLD";
 			case decisionClasses.RAISE_CLASS:
 				return "DECISION_RAISE";
 			default:
@@ -171,8 +167,6 @@ public abstract class Decision {
 			switch (decisionClass) {
 			case decisionClasses.CALL_CLASS:
 				return "DECISION_CALL";
-			case decisionClasses.FOLD_CLASS:
-				return "DECISION_FOLD";
 			case decisionClasses.RAISE_CLASS:
 				return "DECISION_RAISE";
 			default:
