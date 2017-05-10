@@ -105,7 +105,7 @@ public class Regulateur {
 			this.time.update(info.situation);
 			this.events.update(info.situation);
 
-			int decisionClass = Decision.decide(meteo.getClasse(),
+			int decisionClass = Decision.decide(learn, meteo.getClasse(),
 					env.getClasse(), mechs.getClasse(), time.getClasse(), events.getClasse(),
 					weights);
 			this.events.addPersonalDecision(decisionClass);
