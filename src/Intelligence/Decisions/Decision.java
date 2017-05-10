@@ -103,8 +103,6 @@ public abstract class Decision {
 			switch (indice) {
 			case 0:
 				return decisionClasses.CALL_CLASS;
-			case 1:
-				return decisionClasses.FOLD_CLASS;
 			default:
 				return -1;
 			}
@@ -113,8 +111,6 @@ public abstract class Decision {
 			case 0:
 				return decisionClasses.CHECK_CLASS;
 			case 1:
-				return decisionClasses.FOLD_CLASS;
-			case 2:
 				return decisionClasses.RAISE_CLASS;
 			default:
 				return -1;
@@ -124,8 +120,6 @@ public abstract class Decision {
 			case 0:
 				return decisionClasses.CALL_CLASS;
 			case 1:
-				return decisionClasses.FOLD_CLASS;
-			case 2:
 				return decisionClasses.RAISE_CLASS;
 			default:
 				return -1;
