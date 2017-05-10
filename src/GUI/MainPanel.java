@@ -21,13 +21,14 @@ public class MainPanel extends JPanel {
 	private JLabel betLabels [] = null;	
 	private JLabel potLabel = null;
 	
+	private int size = -1;
 	
-	private int spacesRight[] = {constants.w2Panel, constants.w4Panel/2, constants.w3Panel, constants.w1Panel};
-	private int spacesLeft[] = {constants.w1Panel, constants.w3Panel, constants.w4Panel/2, constants.w2Panel};
-		
-	private int spacesUp[] = {constants.h1Panel, constants.h3Panel, constants.h2Panel};
-	private int spacesDown[] = {constants.h2Panel, constants.h3Panel, constants.h1Panel};
-		
+	private int spacesRight[] = new int[4];
+	private int spacesLeft[] = new int[4];
+	
+	private int spacesUp[] = new int[3];
+	private int spacesDown[] = new int[3];
+	
 	private GridBagConstraints c = null;
 	
 	
@@ -37,7 +38,14 @@ public class MainPanel extends JPanel {
 	{
 		super(new GridBagLayout());
 		c = new GridBagConstraints();
-				
+		
+		if (Main.constants.GUI_big)
+			this.size = constants.BIG_GUI_INDICE;
+		else
+			this.size = constants.SMALL_GUI_INDICE;
+		
+		
+		
 		int numberPlayers = Game.constants.NUMBER_PLAYERS;
 		playerPanels = new PlayerPanel[Game.constants.NUMBER_PLAYERS];
 		betLabels = new JLabel[Game.constants.NUMBER_PLAYERS];
@@ -64,6 +72,27 @@ public class MainPanel extends JPanel {
 		this.addComponents();
 	}
 	
+	public void initialize_spaces()
+	{
+		spacesRight[0] = constants.w2Panel[size];
+		spacesRight[1] = constants.w4Panel[size]/2;
+		spacesRight[2] = constants.w3Panel[size];
+		spacesRight[3] = constants.w1Panel[size];
+		
+		spacesLeft[0] = constants.w1Panel[size];
+		spacesLeft[1] = constants.w3Panel[size];
+		spacesLeft[2] = constants.w4Panel[size]/2;
+		spacesLeft[3] = constants.w2Panel[size];
+			
+		spacesUp[0] = constants.h1Panel[size];
+		spacesUp[1] = constants.h3Panel[size];
+		spacesUp[2] = constants.h2Panel[size];
+		
+		spacesDown[0] = constants.h2Panel[size];
+		spacesDown[1] = constants.h3Panel[size];
+		spacesDown[2] = constants.h1Panel[size];
+		
+	}
 	
 	public void addComponents()
 	{
@@ -175,7 +204,7 @@ public class MainPanel extends JPanel {
 		c.gridx = 2;
 		c.gridy = 1;
 		c.gridwidth = 1;
-		c.insets = new Insets(0, constants.w4Panel/4, 0, constants.w4Panel/4);
+		c.insets = new Insets(0, constants.w4Panel[size]/4, 0, constants.w4Panel[size]/4);
 		this.add(potLabel, c);
 	}
 	
@@ -254,7 +283,7 @@ public class MainPanel extends JPanel {
 	{
 		super.paintComponent(g);
 		BufferedImage backgroundImage = null;
-		backgroundImage = IO.loadImage(constants.IMAGE_BACKGROUND_PATH);
+		backgroundImage = IO.loadImage(constants.IMAGE_BACKGROUND_PATH[size]);
 		
 		if (constants.printSizes)
 			System.out.println("MainPanel : hauteur = " + this.getHeight() + ", largeur = " + this.getWidth() + ".");

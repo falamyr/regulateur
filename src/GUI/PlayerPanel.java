@@ -18,6 +18,8 @@ public class PlayerPanel extends JPanel {
 	
 	// DONNEES
 
+	private int size = -1;
+	
 	private int position = -1;
 	private int playerType = -1;
 	private boolean dealer = false;
@@ -47,8 +49,14 @@ public class PlayerPanel extends JPanel {
 	public PlayerPanel(int position) {
 		super(new GridBagLayout());
 
-		this.position = position;
+		
+		if (Main.constants.GUI_big)
+			this.size = constants.BIG_GUI_INDICE;
+		else
+			this.size = constants.SMALL_GUI_INDICE;
 
+		this.position = position;
+		
 		constraintsName = new GridBagConstraints();
 		constraintsStack = new GridBagConstraints();
 		constraintsDecision = new GridBagConstraints();
@@ -59,16 +67,16 @@ public class PlayerPanel extends JPanel {
 		nameLabel = new JLabel(" ");
 		nameLabel.setHorizontalAlignment(JLabel.CENTER);
 		nameLabel.setVerticalAlignment(JLabel.CENTER);
-		nameLabel.setMinimumSize(new Dimension(constants.WIDTH_LABEL_MIN,
-				constants.HEIGHT_LABEL_MIN));
+		nameLabel.setMinimumSize(new Dimension(constants.WIDTH_LABEL_MIN[size],
+				constants.HEIGHT_LABEL_MIN[size]));
 		nameLabel.setPreferredSize(new Dimension(80, 25));
 		nameLabel.setMaximumSize(new Dimension(100, 25));
 
 		stackLabel = new JLabel(" ");
 		stackLabel.setHorizontalAlignment(JLabel.CENTER);
 		stackLabel.setVerticalAlignment(JLabel.CENTER);
-		stackLabel.setMinimumSize(new Dimension(constants.WIDTH_LABEL_MIN,
-				constants.HEIGHT_LABEL_MIN));
+		stackLabel.setMinimumSize(new Dimension(constants.WIDTH_LABEL_MIN[size],
+				constants.HEIGHT_LABEL_MIN[size]));
 		stackLabel.setPreferredSize(new Dimension(80, 25));
 		stackLabel.setMaximumSize(new Dimension(100, 25));
 
@@ -76,25 +84,25 @@ public class PlayerPanel extends JPanel {
 		decisionLabel.setHorizontalAlignment(JLabel.CENTER);
 		decisionLabel.setVerticalAlignment(JLabel.CENTER);
 		decisionLabel.setMinimumSize(new Dimension(
-				constants.WIDTH_LABELDECISION_MIN,
-				constants.HEIGHT_LABELDECISION_MIN));
+				constants.WIDTH_LABELDECISION_MIN[size],
+				constants.HEIGHT_LABELDECISION_MIN[size]));
 		decisionLabel.setPreferredSize(new Dimension(80, 30));
 		decisionLabel.setMaximumSize(new Dimension(100, 30));
 
 		cardsVoid = new JLabel[2];
 		cardsVoid[0] = new JLabel(new ImageIcon(
-				IO.loadImage((GUI.constants.IMAGE_CARDS_PATH + "void.png"))));
+				IO.loadImage((GUI.constants.IMAGE_CARDS_PATH[size] + "void.png"))));
 		cardsVoid[1] = new JLabel(new ImageIcon(
-				IO.loadImage((GUI.constants.IMAGE_CARDS_PATH + "void.png"))));
+				IO.loadImage((GUI.constants.IMAGE_CARDS_PATH[size] + "void.png"))));
 		cardLabel1 = cardsVoid[0];
 		cardLabel2 = cardsVoid[1];
 
 		buttonDealer = new JLabel(new ImageIcon(
-				IO.loadImage((GUI.constants.IMAGE_BUTTON_PATH + "Dealer.png"))));
+				IO.loadImage((GUI.constants.IMAGE_BUTTON_PATH[size] + "Dealer.png"))));
 		buttonSB = new JLabel(new ImageIcon(
-				IO.loadImage((GUI.constants.IMAGE_BUTTON_PATH + "SB.png"))));
+				IO.loadImage((GUI.constants.IMAGE_BUTTON_PATH[size] + "SB.png"))));
 		buttonBB = new JLabel(new ImageIcon(
-				IO.loadImage((GUI.constants.IMAGE_BUTTON_PATH + "BB.png"))));
+				IO.loadImage((GUI.constants.IMAGE_BUTTON_PATH[size] + "BB.png"))));
 
 		addComponents();
 
@@ -127,8 +135,8 @@ public class PlayerPanel extends JPanel {
 
 	public void setConstraints() {
 		constraintsInitialize(constraintsName);
-		constraintsName.insets = new Insets(constants.h1Player,
-				constants.w1Player, constants.h2Player / 2, constants.w1Player);
+		constraintsName.insets = new Insets(constants.h1Player[size],
+				constants.w1Player[size], constants.h2Player[size] / 2, constants.w1Player[size]);
 		constraintsName.gridwidth = 2;
 		constraintsName.gridx = 0;
 		constraintsName.gridy = 0;
@@ -136,27 +144,27 @@ public class PlayerPanel extends JPanel {
 		constraintsInitialize(constraintsStack);
 		constraintsStack.gridx = 0;
 		constraintsStack.gridy = 1;
-		constraintsStack.insets = new Insets(constants.h2Player / 2,
-				constants.w3Player, constants.h3Player / 2, constants.w3Player);
+		constraintsStack.insets = new Insets(constants.h2Player[size] / 2,
+				constants.w3Player[size], constants.h3Player[size] / 2, constants.w3Player[size]);
 		constraintsStack.gridwidth = 2;
 
 		constraintsInitialize(constraintsDecision);
 		constraintsDecision.gridx = 0;
 		constraintsDecision.gridy = 2;
-		constraintsDecision.insets = new Insets(constants.h3Player / 2,
-				constants.w4Player, constants.h4Player / 2, constants.w4Player);
+		constraintsDecision.insets = new Insets(constants.h3Player[size] / 2,
+				constants.w4Player[size], constants.h4Player[size] / 2, constants.w4Player[size]);
 		constraintsDecision.gridwidth = 2;
 
 		constraintsInitialize(constraintsCard1);
-		constraintsCard1.insets = new Insets(constants.h4Player / 2,
-				constants.w5Player, constants.h5Player, constants.w6Player / 2);
+		constraintsCard1.insets = new Insets(constants.h4Player[size] / 2,
+				constants.w5Player[size], constants.h5Player[size], constants.w6Player[size] / 2);
 		constraintsCard1.gridwidth = 1;
 		constraintsCard1.gridx = 0;
 		constraintsCard1.gridy = 3;
 
 		constraintsInitialize(constraintsCard2);
-		constraintsCard2.insets = new Insets(constants.h4Player / 2,
-				constants.w6Player / 2, constants.h5Player, constants.w5Player);
+		constraintsCard2.insets = new Insets(constants.h4Player[size] / 2,
+				constants.w6Player[size] / 2, constants.h5Player[size], constants.w5Player[size]);
 		constraintsCard2.gridwidth = 1;
 		constraintsCard2.gridx = 1;
 		constraintsCard2.gridy = 3;
@@ -166,8 +174,8 @@ public class PlayerPanel extends JPanel {
 		constraintsButton.anchor = GridBagConstraints.FIRST_LINE_END;
 		constraintsButton.gridx = 1;
 		constraintsButton.gridy = 0;
-		constraintsButton.insets = new Insets(constants.h6Player, 0, 0,
-				constants.w2Player);
+		constraintsButton.insets = new Insets(constants.h6Player[size], 0, 0,
+				constants.w2Player[size]);
 		constraintsButton.gridwidth = 1;
 	}
 
@@ -296,10 +304,10 @@ public class PlayerPanel extends JPanel {
 
 		
 		if (playerType == -1)
-			backgroundImage = IO.loadImage(constants.IMAGE_PLAYER_PANEL_PATH
+			backgroundImage = IO.loadImage(constants.IMAGE_PLAYER_PANEL_PATH[size]
 				+ ".png");
 		else
-			backgroundImage = IO.loadImage(constants.IMAGE_PLAYER_PANEL_PATH
+			backgroundImage = IO.loadImage(constants.IMAGE_PLAYER_PANEL_PATH[size]
 					+ constants.IMAGE_PLAYER_PANEL_PERSO_PATH[playerType] + ".png");
 
 		

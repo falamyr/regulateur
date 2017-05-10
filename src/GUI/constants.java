@@ -4,8 +4,8 @@ public interface constants {
 
 	// MEASURES
 
-	public static final int LARGE_FRAME_INDICE = 0;
-	public static final int SMALL_FRAME_INDICE = 1;
+	public static final int BIG_GUI_INDICE = 0;
+	public static final int SMALL_GUI_INDICE = 1;
 
 	public static final int[] WIDTH_CARD = { 60, 40 };
 
@@ -77,14 +77,12 @@ public interface constants {
 	// IMAGES PATHS
 	public static final String[] IMAGE_BACKGROUND_PATH = {
 			"Images/BackgroundBIG.png", "Images/BackgroundSMALL.png", };
-	public static final String[] IMAGE_CARDS_PATH = { "Images/Cards/BIG",
-			"Images/Cards/SMALL", };
+	public static final String[] IMAGE_CARDS_PATH = { "Images/Cards/BIG/",
+			"Images/Cards/SMALL/", };
 	public static final String[] IMAGE_PLAYER_PANEL_PATH = {
-			"Images/PlayerPanelBIG", "Images/PlayerPanelSMALL", };
-	public static final String[][] IMAGE_PLAYER_PANEL_PERSO_PATH = {
-			{ "CandiceBIG", "CandiceSMALL" }, { "OlaiaBIG", "OlaiaSMALL" },
-			{ "RaphaelBIG", "RaphaelSMALL" }, { "HasanBIG", "HasanSMALL" },
-			{ "BenceBIG", "BenceSMALL" }, { "PierreBIG", "PierreSMALL" } };
+			"Images/PlayerPanelBIG", "Images/PlayerPanelSMALL" };
+	public static final String[] IMAGE_PLAYER_PANEL_PERSO_PATH = {
+			"Candice", "Olaia", "Raphael", "Hasan", "Bence", "Pierre" };
 	public static final String[] IMAGE_BOARD_PANEL_PATH = {
 			"Images/BoardPanelBIG.png", "Images/BoardPanelSMALL.png", };
 	public static final String[] IMAGE_BUTTON_PATH = { "Images/", "Images/", };

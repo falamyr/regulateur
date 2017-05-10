@@ -17,6 +17,8 @@ public class BoardPanel extends JPanel {
 	
 	
 	private static final long serialVersionUID = 1L;
+	
+	private int size = -1;
 
 	private GridBagConstraints c = null;
 			
@@ -30,12 +32,17 @@ public class BoardPanel extends JPanel {
 	{
 		super(new GridBagLayout());
 		
+		if (Main.constants.GUI_big)
+			this.size = constants.BIG_GUI_INDICE;
+		else
+			this.size = constants.SMALL_GUI_INDICE;
+		
 		cardsVoid = new JLabel[5];
 		cardsLabels = new JLabel[5];
 					
 		for (int i = 0 ; i < 5 ; i++)
 		{
-			cardsVoid[i] = new JLabel(new ImageIcon(IO.loadImage((GUI.constants.IMAGE_CARDS_PATH + "void.png"))));
+			cardsVoid[i] = new JLabel(new ImageIcon(IO.loadImage((GUI.constants.IMAGE_CARDS_PATH[size] + "void.png"))));
 			cardsLabels[i] = cardsVoid[i];
 		}
 		
@@ -76,23 +83,23 @@ public class BoardPanel extends JPanel {
 	{
 		constraintsInitialize(c);
 		
-		c.insets = new Insets(constants.h1Board, constants.w1Board, constants.h1Board, constants.w2Board/2);
+		c.insets = new Insets(constants.h1Board[size], constants.w1Board[size], constants.h1Board[size], constants.w2Board[size]/2);
 		c.gridx = 0;
 		this.add(cardsLabels[0], c);		
 
-		c.insets = new Insets(constants.h1Board, constants.w2Board/2, constants.h1Board, constants.w2Board/2);
+		c.insets = new Insets(constants.h1Board[size], constants.w2Board[size]/2, constants.h1Board[size], constants.w2Board[size]/2);
 		c.gridx = 1;
 		this.add(cardsLabels[1], c);		
 
-		c.insets = new Insets(constants.h1Board, constants.w2Board/2, constants.h1Board, constants.w2Board/2);
+		c.insets = new Insets(constants.h1Board[size], constants.w2Board[size]/2, constants.h1Board[size], constants.w2Board[size]/2);
 		c.gridx = 2;
 		this.add(cardsLabels[2], c);
 
-		c.insets = new Insets(constants.h1Board, constants.w2Board/2, constants.h1Board, constants.w2Board/2);
+		c.insets = new Insets(constants.h1Board[size], constants.w2Board[size]/2, constants.h1Board[size], constants.w2Board[size]/2);
 		c.gridx = 3;
 		this.add(cardsLabels[3], c);
 
-		c.insets = new Insets(constants.h1Board, constants.w2Board/2, constants.h1Board, constants.w1Board);
+		c.insets = new Insets(constants.h1Board[size], constants.w2Board[size]/2, constants.h1Board[size], constants.w1Board[size]);
 		c.gridx = 4;
 		this.add(cardsLabels[4], c);
 	}
@@ -117,7 +124,7 @@ public class BoardPanel extends JPanel {
 		//super.paintComponent(g);
 		BufferedImage backgroundImage = null;		
 		
-		backgroundImage = IO.loadImage(constants.IMAGE_BOARD_PANEL_PATH);		
+		backgroundImage = IO.loadImage(constants.IMAGE_BOARD_PANEL_PATH[size]);		
 		g.drawImage(backgroundImage, 0, 0, this);
 		if (constants.printSizes)
 			System.out.println("PanelBoard : hauteur = " + this.getHeight() + ", largeur = " + this.getWidth() + ".");

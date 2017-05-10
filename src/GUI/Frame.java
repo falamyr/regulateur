@@ -12,7 +12,7 @@ public class Frame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
-	
+	private int size = -1;
 	
 	// DONNEES	
 	private MainPanel mainPanel = null;
@@ -22,8 +22,13 @@ public class Frame extends JFrame {
 	// CONSTRUCTEUR
 	public Frame()
 	{
+		if (Main.constants.GUI_big)
+			this.size = constants.BIG_GUI_INDICE;
+		else
+			this.size = constants.SMALL_GUI_INDICE;
+		
 		this.setTitle("Régulateur");
-		this.setSize(constants.WIDTH_FRAME, constants.HEIGHT_FRAME);
+		this.setSize(constants.WIDTH_FRAME[size], constants.HEIGHT_FRAME[size]);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
 		this.setResizable(false);

@@ -9,7 +9,7 @@ public interface constants {
 	public static final int fast = 5;
 	public static final int very_fast = 20;
 	
-	public static final int pace = very_fast;
+	public static final int pace = slow;
 
 	public static final long waitBeforeTurn = 800/pace;
 	public static final long waitAfterInitializeTurn = 200/pace;
@@ -26,6 +26,7 @@ public interface constants {
 	
 	// GUI
 	public static final boolean GUI_on = true;
+	public static final boolean GUI_big = true;
 	public static final long waitBetweenFrameUpdates = 20;
 	
 	// REGULATEUR

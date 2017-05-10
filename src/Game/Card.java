@@ -55,7 +55,11 @@ public class Card {
 	
 	public void initializeLabel()
 	{
-		this.cardLabel = new JLabel(new ImageIcon(IO.loadImage((GUI.constants.IMAGE_CARDS_PATH + this.toString() + ".png"))));
+		if (Main.constants.GUI_big)
+			this.cardLabel = new JLabel(new ImageIcon(IO.loadImage((GUI.constants.IMAGE_CARDS_PATH[GUI.constants.BIG_GUI_INDICE] + this.toString() + ".png"))));
+		else
+			this.cardLabel = new JLabel(new ImageIcon(IO.loadImage((GUI.constants.IMAGE_CARDS_PATH[GUI.constants.SMALL_GUI_INDICE] + this.toString() + ".png"))));
+			
 	}
 	
 	
