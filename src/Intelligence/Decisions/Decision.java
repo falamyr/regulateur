@@ -14,7 +14,7 @@ public abstract class Decision {
 	private static int findMax(int[] weights, int mechanicsClass) {
 		int numberWeights = getNumberClasses(mechanicsClass);
 
-		double[] tmp = new double[numberWeights];
+		int[] tmp = new int[numberWeights];
 		for (int i = 0; i < numberWeights; i++)
 			tmp[i] = weights[i];
 
@@ -40,12 +40,12 @@ public abstract class Decision {
 		case mechanicsClasses.EQUALS_BET_CLASS:
 			if (indice == 0)
 				return decisionClasses.CHECK_CLASS;
-			else
+			else if (indice == 1)
 				return decisionClasses.RAISE_CLASS;
 		case mechanicsClasses.OVER_BET_CLASS:
 			if (indice == 0)
 				return decisionClasses.CALL_CLASS;
-			else
+			else if (indice == 1)
 				return decisionClasses.RAISE_CLASS;
 		default:
 			return -1;
@@ -132,11 +132,11 @@ public abstract class Decision {
 	public static int getNumberClasses(int mechanicsClass) {
 		switch (mechanicsClass) {
 		case mechanicsClasses.UNDER_BET_CLASS:
-			return 2;
+			return 1;
 		case mechanicsClasses.EQUALS_BET_CLASS:
-			return 3;
+			return 2;
 		case mechanicsClasses.OVER_BET_CLASS:
-			return 3;
+			return 2;
 		case mechanicsClasses.ZERO_STACK_CLASS:
 			return 0;
 		default:
