@@ -6,6 +6,7 @@ public interface decisionClasses {
 	public static final int CHECK_CLASS = 112;
 	public static final int CALL_CLASS = 113;
 	public static final int RAISE_CLASS = 115;
+	public static final int FOLD_CLASS = 116;
 	
 	
 	public static final int []NUMBER_CLASSES = 

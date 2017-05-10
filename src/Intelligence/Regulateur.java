@@ -121,6 +121,8 @@ public class Regulateur {
 				return Game.constants.CHECK;
 			case decisionClasses.RAISE_CLASS:
 				return Game.constants.RAISE;
+			case decisionClasses.FOLD_CLASS:
+				return Game.constants.FOLD;
 			default:				
 				return Game.constants.UNDEFINED;
 			}
