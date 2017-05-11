@@ -37,6 +37,9 @@ public abstract class Decision {
 	}
 
 	private static int getDecision(int indice, int mechanicsClass) {
+		if (indice == 2)
+			return decisionClasses.FOLD_CLASS;
+		
 		switch (mechanicsClass) {
 		case mechanicsClasses.UNDER_BET_CLASS:
 			if (indice == 0)
