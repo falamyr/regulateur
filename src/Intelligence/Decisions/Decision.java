@@ -55,6 +55,15 @@ public abstract class Decision {
 			else if (indice == 1)
 				return decisionClasses.RAISE_CLASS;
 		default:
+			try {
+			throw new Exception("Intelligence.Decisions.Decision.java : getDecision(int indice, int mechanicsClass), mechanicsClass non reconnue.\n"
+					+ "indice = " + indice + ", mechanicsClass = " + mechanicsClass);
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+				System.exit(0);
+			}
 			return -1;
 		}
 	}

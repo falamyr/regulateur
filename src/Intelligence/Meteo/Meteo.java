@@ -73,8 +73,8 @@ public class Meteo {
 
 	public void classify() {
 
-		int classCard1 = cardsValues[0]*cardsColors[0];
-		int classCard2 = cardsValues[1]*cardsColors[1];
+		int classCard1 = cardsValues[0] + 13 * cardsColors[0];
+		int classCard2 = cardsValues[1] + 13 * cardsColors[1];
 		
 		this.classe = classCard1 + 52 * classCard2;
 	}

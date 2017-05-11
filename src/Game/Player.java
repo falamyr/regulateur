@@ -288,7 +288,7 @@ public class Player {
 			this.lastDecision = decision;
 
 			if (decision == constants.RAISE)
-				decision = Math.max(Math.min(betMax * 2, stack + bet), bigBlindAmount);
+				decision = Math.max(Math.min(betMax * 2, stack + bet), Math.min(bigBlindAmount, stack + bet));
 			return decision;
 		} else {
 			if (bet < betMax) {
