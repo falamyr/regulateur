@@ -36,7 +36,7 @@ public class Run {
 		
 		boolean learn = true;
 		boolean save = true;
-		boolean load = false;
+		boolean load = true;
 		Regulateur []regulateurs = new Regulateur[6];
 		for (int i = 0 ; i < 6 ; i++)
 		{
