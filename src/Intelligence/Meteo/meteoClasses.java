@@ -5,6 +5,7 @@ public interface meteoClasses {
 	
 	public static final int NUMBER_CLASSES = 52*52;
 	
+	public static final int UNDEFINED_CLASS = -1;
 	
 	public static final String []COLORS_STRINGS = {
 		"h",
