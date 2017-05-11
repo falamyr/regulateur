@@ -25,7 +25,7 @@ public interface constants {
 	public static final long waitAfterResetTurn = 300/pace;
 	
 	// GUI
-	public static final boolean GUI_on = true;
+	public static final boolean GUI_on = false;
 	public static final boolean GUI_big = false;
 	public static final long waitBetweenFrameUpdates = 20;
 	
