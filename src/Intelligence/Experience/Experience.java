@@ -12,8 +12,6 @@ import Intelligence.Meteo.Meteo;
 import Intelligence.Meteo.meteoClasses;
 import Intelligence.Success.Success;
 import Intelligence.Success.successClasses;
-import Intelligence.Time.Time;
-import Intelligence.Time.timeClasses;
 
 public class Experience {
 	
@@ -26,7 +24,6 @@ public class Experience {
 	protected int meteoClass = meteoClasses.UNDEFINED_CLASS;
 	protected int envClass = environmentClasses.UNDEFINED_CLASS;
 	protected int mechsClass = mechanicsClasses.UNDEFINED_CLASS;
-	protected int timeClass = timeClasses.UNDEFINED_CLASS;
 	protected int eventsClass = eventSequenceClasses.UNDEFINED_CLASS;
 	protected int decisionClass = decisionClasses.UNDEFINED_CLASS;
 	
@@ -36,12 +33,11 @@ public class Experience {
 	
 	protected int successClass = successClasses.UNDEFINED_CLASS;
 	
-	public Experience(String name, Meteo meteo, Environment env, Mechanics mechs, Time time, EventSequence events, int decisionClass)
+	public Experience(String name, Meteo meteo, Environment env, Mechanics mechs, EventSequence events, int decisionClass)
 	{
 		this.name = name;
 		this.meteoClass = meteo.getClasse();
 		this.envClass = env.getClasse();
-		this.timeClass = time.getClasse();
 		this.mechsClass = mechs.getClasse();
 		this.eventsClass = events.getClasse();
 		this.decisionClass = decisionClass;
@@ -65,11 +61,6 @@ public class Experience {
 	public int getMechsClass()
 	{
 		return this.mechsClass;
-	}
-	
-	public int getTimeClass()
-	{
-		return this.timeClass;
 	}
 	
 	public int getEventsClass()
@@ -103,8 +94,6 @@ public class Experience {
 				+ Environment.toString(envClass)
 				+ ", "
 				+ Mechanics.toString(mechsClass)
-				+ ", "
-				+ Time.toString(timeClass)
 				+ ", "
 				+ EventSequence.toString(eventsClass)
 				+ ", "

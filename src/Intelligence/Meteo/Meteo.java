@@ -54,8 +54,8 @@ public class Meteo {
 
 	// TOSTRING
 	public static String toString(int meteoClass) {
-		int classCard1 = meteoClass % 52;
-		int classCard2 = meteoClass / 52;
+		int classCard1 = meteoClass / 52;
+		int classCard2 = meteoClass % 52;
 
 		int colorCard1 = classCard1 / 13;
 		int valueCard1 = classCard1 % 13;
@@ -76,6 +76,6 @@ public class Meteo {
 		int classCard1 = cardsValues[0] + 13 * cardsColors[0];
 		int classCard2 = cardsValues[1] + 13 * cardsColors[1];
 		
-		this.classe = classCard1 + 52 * classCard2;
+		this.classe = classCard2 + 52 * classCard1;
 	}
 }

@@ -72,9 +72,9 @@ public abstract class Decision {
 
 	// NOTE : the learning algorithms never folds
 	public static int decide(int meteoClass, int envClass, int mechsClass,
-			int timeClass, int eventsClass, Weights weights) {
+			int eventsClass, Weights weights) {
 		int[] decisionWeights = weights.getDecisionWeights(meteoClass,
-				envClass, mechsClass, timeClass, eventsClass);
+				envClass, mechsClass, eventsClass);
 
 		int indiceMax = findMax(decisionWeights, mechsClass);
 

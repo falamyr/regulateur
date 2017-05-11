@@ -18,8 +18,6 @@ import Intelligence.Mechanics.Mechanics;
 import Intelligence.Mechanics.mechanicsClasses;
 import Intelligence.Meteo.Meteo;
 import Intelligence.Meteo.meteoClasses;
-import Intelligence.Time.Time;
-import Intelligence.Time.timeClasses;
 import Intelligence.Weights.Weights;
 
 ;
@@ -79,12 +77,11 @@ public class SaverWeights {
 
 			Writer writer = new BufferedWriter(new OutputStreamWriter(stream));
 
-			int[][][][][][] weightsArr = weights.getWeights_io();
+			int[][][][][] weightsArr = weights.getWeights_io();
 
 			for (int i = 0; i < meteoClasses.NUMBER_CLASSES; i++) {
 				for (int j = 0; j < environmentClasses.NUMBER_CLASSES; j++) {
 					for (int k = 0; k < mechanicsClasses.NUMBER_CLASSES; k++) {
-						for (int l = 0; l < timeClasses.NUMBER_CLASSES; l++) {
 							for (int m = 0; m < eventSequenceClasses.NUMBER_CLASSES; m++) {
 								int numberWeights = Decision
 										.getNumberClasses(Mechanics
@@ -98,7 +95,6 @@ public class SaverWeights {
 											.getClassFromIndice(j);
 									int mechsClass = Mechanics
 											.getClassFromIndice(k);
-									int timeClass = Time.getClassFromIndice(l);
 									int eventsClass = EventSequence
 											.getClassFromIndice(m);
 									int decisionClass = Decision
@@ -109,17 +105,15 @@ public class SaverWeights {
 											+ ", "
 											+ Mechanics.toString(mechsClass)
 											+ ", "
-											+ Time.toString(timeClass)
-											+ ", "
 											+ EventSequence
 													.toString(eventsClass)
 											+ ", "
 											+ Decision.toString(decisionClass,
 													mechsClass)
 											+ ", "
-											+ Integer.toString(weightsArr[i][j][k][l][m][n]);
+											+ Integer.toString(weightsArr[i][j][k][m][n]);
 									writer.write(out + "\n");
-								}
+								
 							}
 						}
 					}

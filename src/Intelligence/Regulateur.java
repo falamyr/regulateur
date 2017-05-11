@@ -7,7 +7,6 @@ import Intelligence.Events.EventSequence;
 import Intelligence.Experience.Experience;
 import Intelligence.Mechanics.Mechanics;
 import Intelligence.Meteo.Meteo;
-import Intelligence.Time.Time;
 import Intelligence.Weights.Weights;
 import Intelligence.IO.LoaderWeights;
 import Intelligence.IO.SaverWeights;
@@ -22,7 +21,6 @@ public class Regulateur {
 	protected Meteo meteo = null;
 	protected Environment env = null;
 	protected Mechanics mechs = null;
-	protected Time time = null;
 	protected EventSequence events = null;
 	protected Weights weights = null;
 
@@ -54,7 +52,6 @@ public class Regulateur {
 		meteo = new Meteo();
 		env = new Environment();
 		mechs = new Mechanics();
-		time = new Time();
 		events = new EventSequence(meteo, env, mechs);
 		weights = new Weights();
 
@@ -102,16 +99,15 @@ public class Regulateur {
 			this.meteo.update(info.handValues, info.handColors);
 			this.env.update(info.stack, info.bigBlindAmount, info.numberPlayers);
 			this.mechs.update(info.stack, info.bet, info.betMax);
-			this.time.update(info.situation);
 			this.events.update(info.situation);
 
 			int decisionClass = Decision.decide(meteo.getClasse(),
-					env.getClasse(), mechs.getClasse(), time.getClasse(), events.getClasse(),
+					env.getClasse(), mechs.getClasse(), events.getClasse(),
 					weights);
 			this.events.addPersonalDecision(decisionClass);
 
 			if (learn)
-				addExperience(new Experience(playerName, meteo, env,  mechs,time,
+				addExperience(new Experience(playerName, meteo, env,  mechs,
 						events, decisionClass));
 
 			switch (decisionClass) {
