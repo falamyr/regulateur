@@ -90,7 +90,9 @@ public interface constants {
 			"Candice", "Olaia", "Raphael", "Hasan", "Bence", "Pierre" };
 	public static final String[] IMAGE_BOARD_PANEL_PATH = {
 			"Images/BoardPanelBIG.png", "Images/BoardPanelSMALL.png", };
-	public static final String[] IMAGE_BUTTON_PATH = { "Images/", "Images/", };
+	public static final String[] IMAGE_BUTTON_DEALER_PATH = { "Images/DealerBIG", "Images/DealerSMALL", };
+	public static final String[] IMAGE_BUTTON_SB_PATH = { "Images/SBBIG", "Images/SBSMALL", };
+	public static final String[] IMAGE_BUTTON_BB_PATH = { "Images/BBBIG", "Images/BBSMALL", };
 	public static final String IMAGE_ICONE_PATH = "Images/Icone.png";
 
 	// PLAYERS
