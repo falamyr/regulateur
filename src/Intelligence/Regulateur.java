@@ -47,7 +47,7 @@ public class Regulateur {
 			boolean load) {
 		this.playerName = playerName;
 
-		String savePath = "Saves/" + playerName + ".sav";
+		String savePath = "../Saves/" + playerName + ".sav";
 
 		meteo = new Meteo();
 		env = new Environment();
