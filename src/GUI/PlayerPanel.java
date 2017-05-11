@@ -292,9 +292,9 @@ public class PlayerPanel extends JPanel {
 		} else {
 
 			this.playerType = -1;
-			this.setMinimumSize(new Dimension(210, 188));
-			this.setPreferredSize(new Dimension(210, 188));
-			this.setMaximumSize(new Dimension(210, 188));
+			this.setMinimumSize(new Dimension(constants.DIMENSIONS_PLAYER_PANEL_VOID[size][0], constants.DIMENSIONS_PLAYER_PANEL_VOID[size][1]));
+			this.setPreferredSize(new Dimension(constants.DIMENSIONS_PLAYER_PANEL_VOID[size][0], constants.DIMENSIONS_PLAYER_PANEL_VOID[size][1]));
+			this.setMaximumSize(new Dimension(constants.DIMENSIONS_PLAYER_PANEL_VOID[size][0], constants.DIMENSIONS_PLAYER_PANEL_VOID[size][1]));
 
 		}
 	}

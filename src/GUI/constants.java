@@ -49,6 +49,10 @@ public interface constants {
 					+ HEIGHT_CARD[1] + 2 * h1Player[1] + h2Player[1]
 					+ h3Player[1] };
 
+	public static final int [][]DIMENSIONS_PLAYER_PANEL_VOID = {
+		{210, 188},
+		{134, 129}
+	};
 	public static final int []h1Panel = { 50, 30};
 	public static final int []h2Panel = { 25, 20};
 	public static final int []h3Panel = { 50, 30};
@@ -104,6 +108,6 @@ public interface constants {
 	public static final int PIERRE = 5;
 
 	// PRINT
-	public static final boolean printSizes = true;
+	public static final boolean printSizes = false;
 
 }
