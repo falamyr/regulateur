@@ -26,7 +26,7 @@ public interface constants {
 	
 	// GUI
 	public static final boolean GUI_on = true;
-	public static final boolean GUI_big = false;
+	public static final boolean GUI_big = true;
 	public static final long waitBetweenFrameUpdates = 20;
 	
 	// REGULATEUR

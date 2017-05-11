@@ -44,7 +44,7 @@ public class MainPanel extends JPanel {
 		else
 			this.size = constants.SMALL_GUI_INDICE;
 		
-		
+		initialize_spaces();
 		
 		int numberPlayers = Game.constants.NUMBER_PLAYERS;
 		playerPanels = new PlayerPanel[Game.constants.NUMBER_PLAYERS];
