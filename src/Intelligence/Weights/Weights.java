@@ -87,7 +87,6 @@ public class Weights {
 			int indiceDecision = Decision.getIndiceFromClass(decisionClass,
 					mechsClass);
 
-			System.out.println(Meteo.getIndiceFromClass(meteoClass));
 			int[] decisionWeights = this.weights[Meteo
 					.getIndiceFromClass(meteoClass)][Environment
 					.getIndiceFromClass(envClass)][Mechanics

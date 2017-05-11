@@ -35,8 +35,8 @@ public interface constants {
 	public static final boolean saveExperiencesLabels = true;
 	
 	// PRINT	
-	public static final boolean showAll = false;
-	public static final boolean showNone = true;
+	public static final boolean showAll = true;
+	public static final boolean showNone = false;
 	
 	public static final boolean tableShowOnlyCards = false;
 	
