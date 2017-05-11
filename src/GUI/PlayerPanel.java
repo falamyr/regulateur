@@ -100,7 +100,7 @@ public class PlayerPanel extends JPanel {
 		buttonDealer = new JLabel(new ImageIcon(
 				IO.loadImage((GUI.constants.IMAGE_BUTTON_DEALER_PATH[size] + ".png"))));
 		buttonSB = new JLabel(new ImageIcon(
-				IO.loadImage((GUI.constants.IMAGE_BUTTON__SB_PATH[size] + ".png"))));
+				IO.loadImage((GUI.constants.IMAGE_BUTTON_SB_PATH[size] + ".png"))));
 		buttonBB = new JLabel(new ImageIcon(
 				IO.loadImage((GUI.constants.IMAGE_BUTTON_BB_PATH[size] + ".png"))));
 
