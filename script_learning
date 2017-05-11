@@ -1,0 +1,8 @@
+#!/bin/bash
+
+COUNTER=0
+while [ $COUNTER -ne 200 ]; do
+	java -jar Regulateur.jar
+	echo $COUNTER
+	let COUNTER=COUNTER+1
+done
